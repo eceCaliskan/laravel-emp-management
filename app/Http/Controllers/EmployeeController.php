@@ -16,10 +16,7 @@ class EmployeeController extends Controller
     public function index()
     {
 
-
-
         $employee = DB::table('employees')->paginate(3);
-        //$employee = Employee::all()->paginate(1);
         return view('/employee/employee')->with('employee', $employee);
     }
 

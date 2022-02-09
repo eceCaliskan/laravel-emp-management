@@ -7,14 +7,19 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <title>Document</title>
 </head>
+
 <body>
+    <div class="grid place-items-center pt-28">
+        <button class="ml-20 bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded">Add New Employee</button>
+    </div>
     <table class="grid place-items-center ">
     @foreach ($employee as $person)
     <tr>
-         <td class="pr-10 pb-20 pt-20 pl-10"> {{$person->name}}</td>
+        
+         <td class="pr-10 pb-20 pt-20 pl-10 ">{{$person->name}}</td>
          <td class="pr-10 pb-20 pl-10 pt-20 ">{{$person->surname}}</td>
          <td class="pr-10 pb-20 pl-20 pt-20 ">{{$person->email}}</td>
-         <td class="pr-10 pb-20 pl-20 pt-20 "><button class="bg-white-500 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 rounded">Remove</button></td>
+         <td class="pr-10 pb-20 pl-20 pt-20 "><button class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 border border-red-700 rounded">Remove</button></td>
     </tr>
          <br>
   @endforeach
