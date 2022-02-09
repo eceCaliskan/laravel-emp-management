@@ -8,20 +8,20 @@
     <title>Document</title>
 </head>
 <body>
-
-    <div class=" flex justify-center items-center h-50">
-
-    <table class="table-auto">
-       <h1 class="pr-10">Employee Management</h1>
+    <table class="grid place-items-center ">
     @foreach ($employee as $person)
-         <td class="pr-10 pb-20 bg-slate-200 pt-20 pl-10"> {{$person->name}}</td>
-         <td class="pr-10 pb-20 pl-10 pt-20 bg-red-200">{{$person->surname}}</td>
-         <td class="pr-10 pb-20 pl-20 pt-20 bg-slate-200">{{$person->email}}</td>
-         <td class="pr-10 pb-20 pl-20 pt-20 bg-red-200"><button class="bg-white-500 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 rounded">Remove</button></td>
-        </tr>
+    <tr>
+         <td class="pr-10 pb-20 pt-20 pl-10"> {{$person->name}}</td>
+         <td class="pr-10 pb-20 pl-10 pt-20 ">{{$person->surname}}</td>
+         <td class="pr-10 pb-20 pl-20 pt-20 ">{{$person->email}}</td>
+         <td class="pr-10 pb-20 pl-20 pt-20 "><button class="bg-white-500 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 rounded">Remove</button></td>
+    </tr>
          <br>
-        
   @endforeach
-    </div>
+ 
+  <td class="">{{ $employee->links() }}</td>
+  
+</table>
 </body>
+
 </html>
