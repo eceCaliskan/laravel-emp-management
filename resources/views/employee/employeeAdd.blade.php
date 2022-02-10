@@ -11,7 +11,10 @@
     <title>Document</title>
 </head>
 <body>
-  <form class="pl-96 pr-96 pt-96 "method="POST" action="{{url('/employee')}}">
+  <div class="grid place-items-center pt-28">
+    <a href="/employee">See Employees</a>
+</div>
+  <form class="pl-96 pr-96 pt-40 "method="POST" action="{{url('/employee')}}">
     @csrf
     @method("post")
     <h1 class="pb-20">Create User</h1>

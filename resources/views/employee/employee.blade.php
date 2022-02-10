@@ -15,11 +15,15 @@
     <table class="grid place-items-center ">
     @foreach ($employee as $person)
     <tr>
-        
+        <td class="pr-10 pb-20 pt-20 pl-10 ">{{$person->id}}</td>
          <td class="pr-10 pb-20 pt-20 pl-10 ">{{$person->name}}</td>
          <td class="pr-10 pb-20 pl-10 pt-20 ">{{$person->surname}}</td>
          <td class="pr-10 pb-20 pl-20 pt-20 ">{{$person->email}}</td>
-         <td class="pr-10 pb-20 pl-20 pt-20 "><button class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 border border-red-700 rounded">Remove</button></td>
+         <td class="pr-10 pb-20 pl-20 pt-20 "><form action="/employee/{{ $person->id }}" method="POST">
+        @csrf
+        @method('delete')
+        <button type="submit">Delete</button>
+        </form></td>
     </tr>
          <br>
   @endforeach
