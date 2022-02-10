@@ -1,3 +1,5 @@
+@extends('layouts.app')
+@section('content')
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,9 +13,7 @@
     <title>Document</title>
 </head>
 <body>
-  <div class="grid place-items-center pt-28">
-    <a href="/employee">See Employees</a>
-</div>
+  @auth
   <form class="pl-96 pr-96 pt-40 "method="POST" action="{{url('/employee')}}">
     @csrf
     @method("post")
@@ -41,5 +41,10 @@
         Submit
     </button>
 </form>
+@endauth
+@guest
+    <h2>Please login or register</h2>
+@endguest
 </body>
 </html>
+@endsection

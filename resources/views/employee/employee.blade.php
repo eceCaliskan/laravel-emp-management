@@ -1,3 +1,5 @@
+@extends('layouts.app')
+@section('content')
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,9 +11,6 @@
 </head>
 
 <body>
-    <div class="grid place-items-center pt-28">
-        <a href="/employee/create">Add A New Employee</a>
-    </div>
     <table class="grid place-items-center ">
     @foreach ($employee as $person)
     <tr>
@@ -19,7 +18,7 @@
          <td class="pr-10 pb-20 pt-20 pl-10 ">{{$person->name}}</td>
          <td class="pr-10 pb-20 pl-10 pt-20 ">{{$person->surname}}</td>
          <td class="pr-10 pb-20 pl-20 pt-20 ">{{$person->email}}</td>
-         <td class="pr-10 pb-20 pl-20 pt-20 "><form action="/employee/{{ $person->id }}" method="POST">
+         <td><form action="/employee/{{ $person->id }}" method="POST">
         @csrf
         @method('delete')
         <button type="submit">Delete</button>
@@ -34,3 +33,4 @@
 </body>
 
 </html>
+@endsection('content')
