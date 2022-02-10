@@ -10,7 +10,7 @@
 
 <body>
     <div class="grid place-items-center pt-28">
-        <button class="ml-20 bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded">Add New Employee</button>
+        <a href="/employee/create">Add A New Employee</a>
     </div>
     <table class="grid place-items-center ">
     @foreach ($employee as $person)

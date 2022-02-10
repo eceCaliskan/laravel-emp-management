@@ -10,5 +10,12 @@ class Employee extends Model
     use HasFactory;
     protected $fillable = [
         
+            'name',
+            'surname',
+            'email',
+            'password',
+    
     ];
+
+   public $timestamps = false;
 }

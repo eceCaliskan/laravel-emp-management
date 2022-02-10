@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Employee;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -27,7 +28,7 @@ class EmployeeController extends Controller
      */
     public function create()
     {
-        //
+        return view('/employee/employeeAdd');
     }
 
     /**
@@ -38,7 +39,13 @@ class EmployeeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $user = new Employee();
+        $user->name = $request->name;
+        $user->surname = $request->surname;
+        $user->email = $request->email;
+        $user->date = "22.08.1998";
+        $user->save();
+        redirect('/employee/employeeAdd');
     }
 
     /**
