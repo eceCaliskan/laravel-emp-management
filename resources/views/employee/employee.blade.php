@@ -1,36 +1,33 @@
 @extends('layouts.app')
 @section('content')
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <title>Document</title>
-</head>
 
-<body>
-    <table class="grid place-items-center ">
-    @foreach ($employee as $person)
-    <tr>
-        <td class="pr-10 pb-20 pt-20 pl-10 ">{{$person->id}}</td>
-         <td class="pr-10 pb-20 pt-20 pl-10 ">{{$person->name}}</td>
-         <td class="pr-10 pb-20 pl-10 pt-20 ">{{$person->surname}}</td>
-         <td class="pr-10 pb-20 pl-20 pt-20 ">{{$person->email}}</td>
-         <td><form action="/employee/{{ $person->id }}" method="POST">
-        @csrf
-        @method('delete')
-        <button type="submit">Delete</button>
-        </form></td>
-    </tr>
-         <br>
-  @endforeach
- 
-  <td class="">{{ $employee->links() }}</td>
-  
-</table>
-</body>
 
-</html>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <table class="grid place-items-center ">
+                    @foreach ($employee as $person)
+                    <tr>
+                         <td class="pr-10 pb-20 pt-20 pl-10 text-l">{{$person->id}}</td>
+                         <td class="pr-10 pb-20 pt-20 pl-10 text-l">{{$person->name}}</td>
+                         <td class="pr-10 pb-20 pl-20 pt-20 text-l">{{$person->surname}}</td>
+                         <td class="pr-10 pb-20 pl-20 pt-20 text-l">{{$person->email}}</td>
+                       
+                         @auth
+                         <td class="pr-10 pb-20 pl-20 pt-20"><form action="/employee/{{ $person->id }}" method="POST">@csrf @method('delete')<button type="submit"><p class="text-orange-600 text-l">Delete</p></button></form></td>
+                        @endauth
+                    
+                     @endforeach
+                    
+                   
+                  </tr>
+                  
+                </table>
+                <td class="pl-10 pr-10">{{ $employee->links() }}</td>
+            </div>
+        </div>
+    </div>
+</div>
+
 @endsection('content')

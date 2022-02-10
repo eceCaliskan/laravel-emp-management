@@ -45,7 +45,7 @@ class EmployeeController extends Controller
         $user->email = $request->email;
         $user->date = "22.08.1998";
         $user->save();
-        redirect('/employee/employeeAdd');
+        return view("home");
     }
 
     /**
@@ -92,7 +92,7 @@ class EmployeeController extends Controller
     {
         $employee = Employee::find($id);
         $employee->delete();
-        return redirect("/employee");
+        return view("home");
 
     }
 }
