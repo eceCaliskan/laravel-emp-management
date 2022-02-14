@@ -30,9 +30,7 @@
                   <p class="text-xl"> Employee Management System</p>
                 </a>
                
-                    <a class="navbar-brand" href="/employee/create"><p class="text-orange-600 text-xl">{{ __('Add employee') }}</p></a>
-               
-                    <a class="navbar-brand" href="/employee"><p class="text-orange-600 text-xl">{{ __('See Employees') }}</p></a>
+                   
                
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -83,12 +81,19 @@
                         @endguest
                     </ul>
                 </div>
+              
             </div>
+            
         </nav>
 
         <main class="py-4">
+            
+           
             @yield('content')
         </main>
+
+       
     </div>
 </body>
+
 </html>

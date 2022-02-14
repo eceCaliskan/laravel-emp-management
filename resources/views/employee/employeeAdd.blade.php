@@ -4,11 +4,13 @@
 @section('content')
 
 
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
+    <div class="flex flex-row ">
+        @include('employee.sidebar')
+        <div class="col-md-8 pl-5">
             <div class="card">
+
                    @auth
+               
               <form class="pl-20 pr-20 pt-10 pb-20 "method="POST" action="{{url('/employee')}}">
                      @csrf
                      @method("post")
