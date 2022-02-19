@@ -17,7 +17,7 @@ class EmployeeController extends Controller
     public function index()
     {
 
-        $employee = DB::table('employees')->paginate(3);
+        $employee = DB::table('employees')->paginate(4);
         return view('/employee/employee')->with('employee', $employee);
     }
 
@@ -56,7 +56,8 @@ class EmployeeController extends Controller
      */
     public function show($id)
     {
-        //
+       $employee= Employee::find($id);
+       return view('/employee/employee-detail')->with('employee', $employee);
     }
 
     /**

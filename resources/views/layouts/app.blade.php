@@ -24,14 +24,14 @@
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+        <nav class="bg-black navbar navbar-expand-md navbar-light  shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                  <p class="text-xl"> Employee Management System</p>
+                  <p class="text-xl text-white "> Employee Management System</p>
                 </a>
-               
-                   
-               
+
+
+
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -46,12 +46,12 @@
                     <ul class="navbar-nav ms-auto">
                         <!-- Authentication Links -->
 
-                        
+
                         @guest
-                        
+
                             @if (Route::has('login'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('login') }}"><p class=" text-xl">{{ __('Login') }}</p></a>
+                                    <a class="nav-link" href="{{ route('login') }}"><p class=" text-xl text-white">{{ __('Login') }}</p></a>
                                 </li>
                             @endif
 
@@ -63,7 +63,7 @@
                         @else
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    <p class="text-orange-600 text-l"> {{ Auth::user()->name }}</p>  
+                                    <p class="text-white text-l"> {{ Auth::user()->name }}</p>
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
@@ -81,18 +81,18 @@
                         @endguest
                     </ul>
                 </div>
-              
+
             </div>
-            
+
         </nav>
 
         <main class="py-4">
-            
-           
+
+
             @yield('content')
         </main>
 
-       
+
     </div>
 </body>
 

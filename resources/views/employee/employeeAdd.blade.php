@@ -6,45 +6,46 @@
 
     <div class="flex flex-row ">
         @include('employee.sidebar')
-        <div class="col-md-8 pl-5">
+        <div class="col-md-10 pl-10 ">
             <div class="card">
 
                    @auth
-               
-              <form class="pl-20 pr-20 pt-10 pb-20 "method="POST" action="{{url('/employee')}}">
+
+              <form class="pl-64 pr-20 pt-10 pb-20 "method="POST" action="{{url('/employee')}}">
                      @csrf
                      @method("post")
-                     <h1 class="pb-20">Create User</h1>
-                     <input aria-label="Enter your name" 
+                     <h1 class="pb-20 text-3xl">Add Emloyee</h1>
+                     <input aria-label="Enter your name"
                             name="name"
-                            type="text" placeholder="Name" 
-                            class="text-sm text-gray-base w-full 
-                                   mr-3 py-5 px-4 h-2 border 
+                            type="text" placeholder="Name"
+                            class="text-sm text-gray-base
+                            w-3/6 mr-3 py-4  h-2 border
                                    border-gray-200 rounded mb-2" />
-                     <input aria-label="Enter your surname" 
+                     <input aria-label="Enter your surname"
                             name="surname"
-                            type="text" placeholder="Surname" 
-                            class="text-sm text-gray-base w-full 
-                                   mr-3 py-5 px-4 h-2 border 
-                                   border-gray-200 rounded mb-2" /> 
-                     <input aria-label="Enter your Email" 
+                            type="text" placeholder="Surname"
+                            class="text-sm text-gray-base w-3/6
+                                   mr-3 py-4 h-2 border
+                                   border-gray-200 rounded mb-2" />
+                     <input aria-label="Enter your Email"
                             name="email"
                             type="text" placeholder="Email"
-                            class="text-sm text-gray-base w-full mr-3 
-                                   py-5 px-4 h-2 border border-gray-200 
+                            class="text-sm text-gray-base  w-3/6 mr-3
+                                   py-4 h-2 border border-gray-200
                                    rounded mb-2" />
+                                   <br>
                      <button type="submit"
-                             class="bg-blue-400 w-9/12 mt-10 pt-4 pb-4">
+                             class="bg-black text-white w-24 mt-5 rounded-lg pt-1 pb-1 ">
                          Submit
                      </button>
                  </form>
-              
+
             </div>
         </div>
         @endauth
-       
+
     </div>
-    
+
 </div>
 @guest
 <div class="text-center pt-20 text-xl"><h1>PLEASE LOGIN TO ADD EMPLOYEES</h1></div>
